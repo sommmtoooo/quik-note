@@ -1,0 +1,24 @@
+@import url("../clash-display/css/clash-display.css");
+@import url("../general-sans/css/general-sans.css");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: ClashDisplay-Semibold;
+}
+
+body {
+  font-family: GeneralSans-Regular;
+}
+
+.fade-up {
+  transform: translateY(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.fade-up:hover {
+  transform: translateY(-0.24rem);
+}
