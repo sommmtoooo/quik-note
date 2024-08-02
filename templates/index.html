@@ -4,13 +4,14 @@
   style="min-height: 100vh"
 >
   <section class="text-center">
+    {{current_user.username}}
     <h1>Quik Note</h1>
     <p class="col-12 col-lg-6 mx-auto">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur,
       fuga neque eum adipisci ratione harum dolor natus pariatur aliquid velit
       molestiae ducimus eaque veniam, modi molestias inventore deserunt at.
     </p>
-    <a href="#" class="fade-up my-2 btn btn-dark">Get Started</a>
+    <a href="{{url_for('user.sign_in_page')}}" class="fade-up my-2 btn btn-dark">Get Started</a>
   </section>
 </section>
 {% endblock %}

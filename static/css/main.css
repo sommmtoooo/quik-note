@@ -22,3 +22,18 @@ body {
 .fade-up:hover {
   transform: translateY(-0.24rem);
 }
+
+.moving {
+  animation: moving 10s ease-in-out 1250ms infinite alternate forwards;
+}
+
+@keyframes moving {
+  from {
+    transform: translateX(-500px);
+    translatex: 0;
+  }
+
+  to {
+    transform: translateX(500px);
+  }
+}

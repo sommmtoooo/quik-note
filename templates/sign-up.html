@@ -1,0 +1,37 @@
+{% include 'layouts/base.html' %} {% block content %}
+<section
+  class="d-flex justify-content-center align-items-center"
+  style="min-height: 100vh"
+>
+  <form
+    action="{{url_for('user.sign_up')}}"
+    method="post"
+    class="col-12 col-lg-6 mx-auto"
+  >
+ <a class="text-decoration-none text-dark" href="{{url_for('index')}}">     <h3>Quik Note</h3></a>
+    <p class="text-muted">Create your account on Quik Note</p>
+    <div class="form-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        name="username"
+        placeholder="Username"
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        name="password"
+        placeholder="Password"
+      />
+    </div>
+
+    <button class="w-100 btn btn-dark" type="submit">Sign Up</button>
+    <p class="my-2 text-muted text-end">
+      Have An Account ? <a href="{{url_for('user.sign_in_page')}}">Sign In</a>
+    </p>
+  </form>
+</section>
+{% endblock %}
