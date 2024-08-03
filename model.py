@@ -15,7 +15,7 @@ class User(UserMixin):
 
 class Note():
 
-    def __init__(self, id, title, content, user_id) -> None:
+    def __init__(self, id,  user_id, title, content) -> None:
         self.id = id
         self.title = title
         self.content = content

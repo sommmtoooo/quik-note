@@ -19,6 +19,10 @@ body {
   transition: 1s ease;
 }
 
+.note {
+  color: black;
+}
+
 .note:hover {
   cursor: pointer;
   background: #181818;

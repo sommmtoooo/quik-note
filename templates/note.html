@@ -1,16 +1,21 @@
 {% include "layouts/base.html" %} {% block content %}
 <section class="container py-5">
       <h1><a class="text-dark text-decoration-none" href="{{url_for('index')}}">Quik Note</a></h1>
-    <form action="" class="d-flex flex-column">
+      <form method="post" action="{{url_for('note.create_note_page', id=note.id)}}" class="d-flex flex-column">
         <div class="form-group mb-3">
-            <input type="text" class="form-control form-control-lg py-2 border-0 border-bottom" placeholder="Title">
+            <input type="text" class="form-control form-control-lg py-2 border-0 border-bottom" placeholder="Title" name="title" value="{{note.title}}">
         </div>
 
         <div class="mb-3">
-  <textarea class="form-control border-0" placeholder="What's on your mind ?" style="min-height: 70vh; resize:none;"></textarea>
+  <textarea class="form-control border-0" placeholder="What's on your mind ?" style="min-height: 70vh; resize:none;" name="content">
+      {{note.content}}
+  </textarea>
 </div>
 
-<button class="btn btn-dark align-self-end">Save</button>
+<div class="align-self-end">
+<button class="btn btn-outline-dark">Save</button>
+<button class="btn btn-danger">Delete</button>
+</div>
     </form>
   </section>
 </section>
