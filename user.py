@@ -10,8 +10,9 @@ def sign_up():
     username =request.form.get('username')
     password = request.form.get('password')
     message = create_user(str(username), str(password))
-    flash(message[0], message[1])
+    flash(message[0])
     if message[2]:
+        flash('Kindly Login')
         return redirect(url_for('user.sign_in_page'))
     return redirect(url_for('user.sign_up_page'))
 

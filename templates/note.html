@@ -13,8 +13,10 @@
 </div>
 
 <div class="align-self-end">
-<button class="btn btn-outline-dark">Save</button>
-<button class="btn btn-danger">Delete</button>
+<button type="submit" class="btn btn-outline-dark">Save</button>
+{% if note %}
+    <a href="{{url_for('note.note_delete_note', id=note.id)}}"  class="btn btn-danger">Delete</a>
+{% endif %}
 </div>
     </form>
   </section>

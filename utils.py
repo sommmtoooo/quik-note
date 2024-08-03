@@ -90,6 +90,22 @@ def update_note(note: Note):
     except:
         return ('Something went wrong', 'error', False)
 
+def delete_note(id: str):
+    connection =get_database_connection()
+    cursor = connection.cursor()
+    sql = "DELETE FROM notes WHERE id = %s"
+    values = (id,)
+    try:
+        cursor.execute(sql, values)
+        connection.commit()
+        connection.close()
+        return ('Note Deleted', 'success', True)
+    except DatabaseError as error:
+        raise error
+        return ('Cannot Run Query Now','error', False)
+    except:
+        return ('Something went wrong', 'error', False)
+
 
 
 def get_user_note(user_id: str):

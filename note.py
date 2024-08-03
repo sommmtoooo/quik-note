@@ -2,7 +2,7 @@ from flask import Blueprint, abort, flash, redirect, render_template, request, u
 from flask_login import current_user, login_required
 from model import Note
 
-from utils import create_note, generate_unique_id, get_note, get_user_note, update_note
+from utils import create_note, delete_note, generate_unique_id, get_note, get_user_note, update_note
 
 note = Blueprint(__name__, 'note')
 
@@ -30,6 +30,7 @@ def note_page(id = None):
 
 @note.post('/notes/')
 @note.post('/notes/<id>')
+@login_required
 def create_note_page(id = None):
     title = request.form.get('title')
     content = request.form.get('content')
@@ -46,3 +47,10 @@ def create_note_page(id = None):
 
     return redirect(url_for('note.notes'))
 
+
+@note.route('/notes/delete/<id>')
+@login_required
+def note_delete_note(id):
+    message = delete_note(str(id))
+    flash(message[0])
+    return redirect(url_for('note.notes'))
