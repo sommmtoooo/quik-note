@@ -1,9 +1,8 @@
 from flask import Blueprint, flash, render_template, redirect, request, url_for
-from flask_login import login_user
+from flask_login import login_user, logout_user
 from utils import create_user, get_user_by_username
 
 user = Blueprint(__name__, 'user')
-
 
 
 @user.post('/sign-up')
@@ -27,7 +26,7 @@ def sign_in():
         if password == 'password':
             print('valid')
             login_user(user)
-            return redirect(url_for('index'))
+            return redirect(url_for('note.notes'))
     flash('Invalid Credentials')
     return redirect(url_for('user.sign_in_page'))
 
@@ -36,7 +35,15 @@ def sign_in():
 def sign_in_page():
     return render_template('sign-in.html')
 
+
 @user.route('/sign-up')
 def sign_up_page():
     return render_template('sign-up.html')
+
+
+@user.route('/sign-out')
+def sign_out():
+    logout_user()
+    return redirect(url_for('index'))
+
 

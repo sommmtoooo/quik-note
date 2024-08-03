@@ -21,11 +21,14 @@
     <link rel="stylesheet" href="{{url_for('static', filename="css/main.css")}}">
   </head>
   <body>
+
 <main
   class="container"
   >
-    {% block content %} {% endblock %}
+    {% block content %} 
+    {% endblock %}
 </main>
+
   {% with messages = get_flashed_messages(with_categories=true) %} {% if
   messages %} {% for category, message in messages %}
   <div class="position-absolute bottom-0 me-3 end-0 alert alert-{{category}} alert-dismissible fade show" role="alert">

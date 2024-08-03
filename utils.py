@@ -2,6 +2,8 @@ from db import get_database_connection
 from mysql.connector.errors import DatabaseError, IntegrityError
 from uuid import uuid4
 
+from model import User
+
 
 
 def create_user(username: str, password: str):
@@ -33,7 +35,7 @@ def get_user_by_username(username: str):
         result = cursor.fetchmany(size=1)
         print(result)
         connection.close()
-        return [{'id': x[0], 'username': x[1], 'password': x[2] } for x in result][0]
+        return [User(x[0], x[1], x[2]) for x in result][0]
     except Exception as error:
         return None
 
@@ -46,6 +48,6 @@ def get_user_by_id(id: str):
         cursor.execute(sql,values)
         result = cursor.fetchmany(size=1)
         connection.close()
-        return [{'id': x[0], 'username': x[1], 'password': x[2] } for x in result][0]
+        return [User(x[0], x[1], x[2]) for x in result][0]
     except Exception:
         return None

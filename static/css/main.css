@@ -14,9 +14,19 @@ body {
   font-family: GeneralSans-Regular;
 }
 
+.fade-up,
+.note {
+  transition: 1s ease;
+}
+
+.note:hover {
+  cursor: pointer;
+  background: #181818;
+  color: #fafada;
+}
+
 .fade-up {
   transform: translateY(0);
-  transition: transform 250ms ease-in-out;
 }
 
 .fade-up:hover {
