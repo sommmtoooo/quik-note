@@ -1,5 +1,5 @@
 from flask import Blueprint, flash, render_template, redirect, request, url_for
-from flask_login import login_user, logout_user
+from flask_login import current_user, login_user, logout_user
 from utils import create_user, get_user_by_username
 
 user = Blueprint(__name__, 'user')
@@ -33,11 +33,17 @@ def sign_in():
 
 @user.route('/sign-in')
 def sign_in_page():
+    if current_user.is_authenticated:
+        return redirect(url_for('note.notes'))
+
     return render_template('sign-in.html')
 
 
 @user.route('/sign-up')
 def sign_up_page():
+    if current_user.is_authenticated:
+        return redirect(url_for('note.notes'))
+
     return render_template('sign-up.html')
 
 

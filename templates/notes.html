@@ -7,6 +7,9 @@
       <a href="{{url_for('user.sign_out')}}" class="btn btn-outline-danger fade-up font-bold rounded-pill">Sign Out</a>
       </div>
   </div>
+  <p>
+  Welcome <b>{{current_user.username|capitalize}}</b>, Here are your notes :)
+  </p>
 
   <!-- No Note -->
   <div

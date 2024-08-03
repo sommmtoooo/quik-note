@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-from flask_login import LoginManager
+from flask import Flask, redirect, render_template, url_for
+from flask_login import LoginManager, current_user
 from user import user
 from note import note 
 from utils import get_user_by_id
@@ -19,6 +19,8 @@ def load_user(id):
 
 @app.route('/')
 def index():
+    if current_user.is_authenticated:
+        return redirect(url_for('note.notes'))
     return render_template('index.html')
 
 
