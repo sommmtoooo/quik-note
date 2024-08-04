@@ -3,4 +3,5 @@ mysql
 mysql-connector-python
 flask-login
 python-dotenv
+gunicorn
 
