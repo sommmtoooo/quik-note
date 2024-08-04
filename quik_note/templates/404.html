@@ -1,0 +1,19 @@
+{% include "layouts/base.html" %} {% block content %}
+<section
+  class="d-flex justify-content-center align-items-center"
+  style="min-height: 100vh"
+>
+  <section class="text-center">
+    <h1>404</h1>
+    <h4>
+    Page Not Found
+    </h4>
+    <a
+      href="{{url_for('index')}}"
+      class="fade-up my-2 btn btn-outline-secondary rounded-pill"
+      >Back Home</a
+    >
+  </section>
+</section>
+
+{% endblock %}

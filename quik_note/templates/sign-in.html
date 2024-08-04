@@ -1,0 +1,41 @@
+{% include 'layouts/base.html' %} {% block content %}
+<section
+  class="d-flex justify-content-center align-items-center"
+  style="min-height: 100vh"
+>
+  <form
+    method="post"
+    action="{{url_for('user.sign_in')}}"
+    class="col-12 col-lg-6 mx-auto"
+  >
+    <input type="hidden" name="_csrf_token" value="{{csrf_token()}}" />
+    <a class="text-decoration-none text-dark" href="{{url_for('index')}}">
+      <h3>Quik Note</h3></a
+    >
+    <p class="text-muted">Sign into your Quik Note account</p>
+    <div class="form-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        name="username"
+        placeholder="Username"
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        placeholder="Password"
+      />
+    </div>
+
+    <button class="w-100 btn btn-dark" type="submit">Sign In</button>
+    <p class="my-2 text-muted text-end">
+      Don't Have An Account ?
+      <a href="{{url_for('user.sign_up_page')}}">Create One.</a>
+    </p>
+  </form>
+</section>
+{% endblock %}

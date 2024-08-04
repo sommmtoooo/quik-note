@@ -1,0 +1,58 @@
+@import url("../fonts/clash-display/css/clash-display.css");
+@import url("../fonts/general-sans/css/general-sans.css");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: ClashDisplay-Semibold;
+}
+
+body {
+  font-family: GeneralSans-Regular;
+}
+
+a:focus {
+  color: red !important;
+  outline: none;
+}
+
+.fade-up,
+.note {
+  transition: 300ms ease;
+}
+
+.note {
+  color: black;
+}
+
+.note:hover {
+  cursor: pointer;
+  background: #181818;
+  color: #fafada;
+}
+
+.fade-up {
+  transform: translateY(0);
+}
+
+.fade-up:hover {
+  transform: translateY(-0.5rem);
+}
+
+.move {
+  animation: moving 1s ease-in-out;
+}
+
+@keyframes moving {
+  from {
+    transform: translateY(100px);
+    translatex: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}

@@ -1,0 +1,19 @@
+{% include "layouts/base.html" %} {% block content %}
+<section
+  class="d-flex justify-content-center align-items-center"
+  style="min-height: 100vh"
+>
+  <section class="text-center">
+    <h1>Quik Note</h1>
+    <p class="col-12 col-lg-8 mx-auto my-3">
+      Welcome to <b>Quik Note</b> – where <b>simplicity</b> and
+      <b>productivity</b>. <b>Capture</b> and <b>organize</b> your thoughts effortlessly with
+      our <b>minimalist</b> design.
+    </p>
+    <a href="{{url_for('user.sign_in_page')}}" class="fade-up my-2 btn btn-dark rounded-pill"
+      >Get Started</a
+    >
+  </section>
+</section>
+
+{% endblock %}
